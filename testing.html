@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .like {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: url("images/MenuBar.png") 0 0 no-repeat;
+            
+            animation: like-gif steps(7) 1s infinite both;
+        }
+
+        .pause {
+            animation-play-state: paused;
+        }
+
+        div {
+            width: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @keyframes like-gif {
+            0% {
+                background-positionX: 0px;
+            }
+
+            100% {
+                background-positionX: -1200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="likes" class="like"></div>
+    <div><input type="button" id="pause" value="pause"></div>
+    <div id="addlist">
+        <form action="#">
+            <input type="text">
+        </form>
+        <a href="./screen.html"></a>
+    </div>
+    <script>
+        var image = document.getElementById("likes"),
+            button = document.getElementById("pause");
+
+        if (image.classList && image && button) {
+            button.onclick = function () {
+                if (this.value == 'pause') {
+                    image.classList.add('pause');
+                    this.value = 'play';
+                } else {
+                    image.classList.remove('pause');
+                    this.value = 'pause';
+                }
+            };
+        }
+        a
+    </script>
+</body>
+
+</html>
